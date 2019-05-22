@@ -12,9 +12,11 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
+    index: '',
     port: 3000,
     open: true,
     proxy: {
+      "!/app": "http://localhost:8080",
       "/api": "http://localhost:8080"
     },
     historyApiFallback: true,
