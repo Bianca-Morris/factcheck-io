@@ -8,15 +8,17 @@ module.exports = {
   entry: path.resolve(__dirname, 'client/app.js'),
   output: {
     path: __dirname + outputDirectory,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   devServer: {
     port: 3000,
     open: true,
     proxy: {
       "/api": "http://localhost:8080"
-    }
-    // contentBase: path.resolve(__dirname, 'public')
+    },
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, 'public')
   },
   module: {
     rules: [{
