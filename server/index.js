@@ -5,8 +5,15 @@ const app = express();
 
 app.use(express.static("dist"));
 
-app.get("/api/getUsername", (req, res) => 
-    res.json({ username: os.userInfo().username })
+app.get("/api/getUsername", (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 
+        req.header('origin') || 
+        req.header('x-forwarded-host') || 
+        req.header('referrer') || 
+        req.header('host')
+    )
+    return res.json({ username: os.userInfo().username });
+    }
 );
 
 app.get('/app/*', function response(req, res) {
