@@ -7,7 +7,6 @@ const outputDirectory = "dist";
 module.exports = {
   entry: path.resolve(__dirname, 'client/app.js'),
   output: {
-    path: __dirname + outputDirectory,
     filename: 'bundle.js',
     publicPath: '/'
   },
