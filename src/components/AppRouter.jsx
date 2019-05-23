@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Page from './Page';
-import Page2 from './Page2';
+import Page from './Page.jsx';
+import Page2 from './Page2.jsx';
 
 class AppRouter extends React.Component {
     render() {
