@@ -1,8 +1,8 @@
 const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const outputDirectory = "dist";
+const outputDirectory = 'dist';
 
 module.exports = {
   entry: path.resolve(__dirname, 'client/app.jsx'),
@@ -12,7 +12,7 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.(js|jsx)$/, 
+      test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       loader: ['babel-loader']
     },
@@ -22,9 +22,9 @@ module.exports = {
     }]
   },
   plugins: [
-    new CleanWebpackPlugin({outputDirectory}),
+    new CleanWebpackPlugin({ outputDirectory }),
     new HtmlWebpackPlugin({
-      template: "./client/public/index.html"
+      template: './client/public/index.html'
     })
   ]
 };
