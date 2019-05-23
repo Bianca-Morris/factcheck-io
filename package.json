@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "client:dev": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon ./server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "webpack --mode development",
+    "dev": "concurrently \"npm run server\" \"npm run client:dev\"",
+    "build:dev": "webpack --watch --mode development",
+    "build:prod": "webpack --watch --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
