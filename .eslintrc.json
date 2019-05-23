@@ -1,12 +1,13 @@
 {
-    "parser": "babel-eslint",
-    "extends": ["airbnb"],
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "rules": {
-      "no-console": "off",
-      "comma-dangle": "off"
-    }
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": "off",
+    "comma-dangle": "off",
+    "global-require": "warn"
   }
+}
