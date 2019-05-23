@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const outputDirectory = "dist";
 
 module.exports = {
-  entry: path.resolve(__dirname, 'client/app.js'),
+  entry: path.resolve(__dirname, 'src/index.js'),
   output: {
     path: __dirname + outputDirectory,
     filename: 'bundle.js',
@@ -36,7 +36,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({outputDirectory}),
     new HtmlWebpackPlugin({
-      template: "./client/public/index.html"
+      template: "./src/public/index.html"
     })
   ]
 };
