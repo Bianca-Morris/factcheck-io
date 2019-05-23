@@ -10,7 +10,7 @@ class Page2 extends React.Component {
         };
     }
     componentDidMount() {
-        axios.get("http://localhost:8080/api/getUsername")
+        axios.get("http://localhost:3000/api/getUsername")
         .then((res) => {
             this.setState({ username: res.data.username });
         })

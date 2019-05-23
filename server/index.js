@@ -13,12 +13,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/getUsername", (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', 
-        req.header('origin') || 
-        req.header('x-forwarded-host') || 
-        req.header('referrer') || 
-        req.header('host')
-    )
     res.json({ username: os.userInfo().username });
     }
 );
