@@ -10,7 +10,9 @@ class Page2 extends React.Component {
         };
     }
     componentDidMount() {
-        axios.get("http://localhost:3000/api/getUsername")
+        const host = (process.env.NODE_ENV === 'production') ? 
+            'http://localhost:8080' : 'http://localhost:3000';
+        axios.get(host + "/api/getUsername")
         .then((res) => {
             this.setState({ username: res.data.username });
         })

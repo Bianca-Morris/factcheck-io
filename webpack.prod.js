@@ -5,7 +5,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const outputDirectory = 'dist';
 
 module.exports = {
-  entry: path.resolve(__dirname, 'client/app.jsx'),
+  mode: 'production',
+  entry: path.resolve(__dirname, 'src/index.jsx'),
   output: {
     filename: 'bundle.js',
     publicPath: '/'
@@ -24,7 +25,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ outputDirectory }),
     new HtmlWebpackPlugin({
-      template: './client/public/index.html'
+      template: './src/public/index.html'
     })
   ]
 };

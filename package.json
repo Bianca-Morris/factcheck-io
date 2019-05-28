@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint --ignore-path .gitignore .",
-    "client:dev": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "client:dev": "webpack-dev-server --devtool inline-source-map --hot --env dev",
     "server": "nodemon ./server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client:dev\"",
-    "build:dev": "webpack --watch --mode development",
-    "build:prod": "webpack -p --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:dev": "webpack --watch --env dev",
+    "build:prod": "webpack -p --env prod",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production concurrently \"npm run build:prod\" \"npm run server\""
   },
   "author": "",
   "license": "ISC",

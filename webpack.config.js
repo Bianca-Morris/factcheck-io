@@ -1,1 +1,1 @@
-module.exports = mode => ((mode === 'production') ? require('./webpack.prod.js') : require('./webpack.dev.js'));
+module.exports = (env) => require(`./webpack.${env}.js`);
