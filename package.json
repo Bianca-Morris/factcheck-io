@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "eslint --fix --ignore-path .gitignore .",
+    "lint": "eslint --fix --ignore-path .gitignore .",
     "client:dev": "npm run pretest && webpack-dev-server --devtool inline-source-map --hot --env dev",
     "server": "nodemon ./server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client:dev\"",
     "build:dev": "webpack --watch --env dev",
     "build:prod": "webpack -p --env prod",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "NODE_ENV=production concurrently \"npm run build:prod\" \"npm run server\""
   },
   "author": "",
@@ -40,6 +40,7 @@
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
+    "mocha": "^6.1.4",
     "nodemon": "^1.19.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.32.0",
