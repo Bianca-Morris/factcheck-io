@@ -14,14 +14,11 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.use('/api/', api);
 
 app.get('/', (req, res) => {
-  res.status(200);
-  res.json({ success: true, index: '/' });
+  res.sendFile(path.join(__dirname, '../src/public/index.html'));
 });
 
-app.get('/app/*', (req, res) => {
-  console.log(distPath);
-  res.sendFile(path.join(__dirname, distPath, 'index.html'));
-  // res.end();
+app.get('/app*', (req, res) => {
+  res.sendFile(path.join(__dirname, distPath, 'app.html'));
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
