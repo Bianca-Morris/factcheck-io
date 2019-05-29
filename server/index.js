@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 // Serve html from the appropriate folder depending on deployment status
-console.log("Production flag active?: ", process.env.NODE_ENV === 'production');
+console.log('Production flag active?: ', process.env.NODE_ENV === 'production');
 const inProduction = process.env.NODE_ENV === 'production';
 const distPath = inProduction ? '../dist' : '../src/public/';
 

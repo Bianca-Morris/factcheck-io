@@ -8,6 +8,7 @@
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
-    "global-require": "warn"
+    "global-require": "warn",
+    "import/no-dynamic-require": "warn"
   }
 }

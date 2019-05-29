@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "eslint --ignore-path .gitignore .",
-    "client:dev": "webpack-dev-server --devtool inline-source-map --hot --env dev",
+    "pretest": "eslint --fix --ignore-path .gitignore .",
+    "client:dev": "npm run pretest && webpack-dev-server --devtool inline-source-map --hot --env dev",
     "server": "nodemon ./server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client:dev\"",
     "build:dev": "webpack --watch --env dev",
