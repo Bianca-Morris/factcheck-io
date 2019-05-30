@@ -8,6 +8,19 @@ const app = express();
 // Pick port depending on environment
 const port = process.env.PORT || 8080;
 
+// Import models
+const { sequelize } = require('./db/models');
+
+// Authenticate
+sequelize.authenticate()
+  .then(() => {
+    console.log('SUCCESS: Connection to DB has been established successfully!');
+  })
+  .catch((err) => {
+    console.error('ERROR: Unable to establish connection to database!');
+    console.log(err);
+  });
+
 // Serve html from the appropriate folder depending on deployment status
 console.log('Production flag active?: ', process.env.NODE_ENV === 'production');
 const inProduction = process.env.NODE_ENV === 'production';
@@ -28,3 +41,5 @@ app.get('/app*', (req, res) => {
 
 // Begin accepting HTTP requests
 app.listen(port, () => console.log(`Listening on port ${port}!`));
+
+module.exports = { dbconn: sequelize };
